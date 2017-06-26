@@ -1,0 +1,6 @@
+export const GET_TASKS_REQUEST = 'GET_TASKS_REQUEST'
+export const CLEAR_ALL = 'CLEAR_ALL'
+export const DELETE_TASK = 'DELETE_TASK'
+export const ADD_TASK = 'ADD_TASK'
+export const CHECK_TASK = 'CHECK_TASK'
+export const SAVE_TASK = 'SAVE_TASK'

@@ -1,0 +1,206 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*end reset*/
+
+@import "mixin";
+@import "variables";
+@import "fonts";
+@import "helpers";
+@import "media";
+
+
+* { outline: none; box-sizing: border-box;}
+
+html {
+  background: #fff;
+  /* font-family: ; */
+  font-size: 14px;
+  line-height: 1.123;
+  color: $color-text;
+  cursor: default;
+}
+body {
+  font: normal 100% 'Open Sans','Arial', sans-serif;
+}
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+:root {
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
+}
+:root{
+  --desktop-width: 1280px;
+}
+
+hr {
+  display: block;
+  border: none;
+  background: #000;
+  height: 1px; width: 3rem;
+  margin: 1.14rem auto; padding: 0;
+}
+
+audio, canvas, iframe, img, svg, video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+.text {
+  &-center    { text-align: center; }
+  &-left      { text-align: left; }
+  &-right     { text-align: right; }
+  &-justify   { text-align: justify; }
+  &-uppercase { text-transform: uppercase; }
+  &-lowercase { text-transform: lowercase; }
+}
+
+input,a,button{
+  outline: none!important;
+  &:hover,&:active,&:focus{
+    outline: none!important;
+  }
+}
+a{
+  text-decoration: none;
+  &:hover,&:active,&:focus{
+    text-decoration: none;
+  }
+}
+
+#debug {
+  display: block;
+  position: fixed;
+  background: #e8514a;
+  right: 0; bottom: 0;
+  padding: 5px 10px;
+  z-index: 200;
+  font-size: 12px; line-height: 1.5;
+  a { display: block; }
+}
+
+// MAIN STYLE
+
+#wrapper{
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+// TASK
+.task{
+  background: #ccc;
+  box-shadow: 0px 1px 5px #000;
+  padding: 25px 15px;
+  margin-top: 25px;
+  .heading{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 15px;
+    color:#000;
+  }
+  &__add{
+    input{
+      width: 75%;
+      float: left;
+    }
+    .btn{
+      width: 25%;
+      float: left;
+    }
+  }
+  &__list{
+    font-size: 16px;
+    margin-bottom: 20px;
+    li{
+      border-bottom: 1px solid gray;
+      padding-bottom: 5px;
+      &.done{
+        input[type='text']{
+          text-decoration: line-through;
+        }
+      }
+      &.active{
+        background: #ddd;
+      }
+      &+li{
+        padding-top: 5px;
+      }
+      input[type='text']{
+        background: none;
+        border: none;
+      }
+    }
+  }
+  &__controls{
+    .btn{
+      &+.btn{
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+@import "popups";
